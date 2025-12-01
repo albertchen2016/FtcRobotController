@@ -6,16 +6,20 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 @Disabled
 @TeleOp
-public class UseString extends OpMode {
+public class IfElseOpMode extends OpMode {
     @Override
     public void init() {
-        String myName = "Alan Smith";
 
-        telemetry.addData("Hello",myName);
     }
 
     @Override
     public void loop() {
-
+       if(gamepad1.left_stick_y<0){
+           telemetry.addData("left stick y","is negative");
+       }
+       else{
+           telemetry.addData("left stick y","is positive");
+       }
+       telemetry.addData("left stick y",gamepad1.left_stick_y);
     }
 }

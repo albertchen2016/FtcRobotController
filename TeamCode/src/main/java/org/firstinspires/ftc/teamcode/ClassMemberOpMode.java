@@ -6,16 +6,19 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 @Disabled
 @TeleOp
-public class UseString extends OpMode {
+public class ClassMemberOpMode extends OpMode {
+    boolean initDone;
+
     @Override
     public void init() {
-        String myName = "Alan Smith";
+        telemetry.addData("init Done",initDone);
+        initDone = true;
 
-        telemetry.addData("Hello",myName);
     }
 
     @Override
     public void loop() {
+        telemetry.addData("init Done",initDone);
 
     }
 }
